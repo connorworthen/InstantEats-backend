@@ -1,4 +1,4 @@
-class Api::V1:UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
 
   def index
     @users = User.all
@@ -31,7 +31,7 @@ class Api::V1:UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      login!
+      # login!
       render json: {
         status: :created,
         user: @user
