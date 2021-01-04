@@ -1,5 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :authorize_request, except: :create
   
   def index
     @users = User.all
@@ -33,9 +32,12 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # login!
+      payload = {user_id: user.id}
+      token = encode_token(payload)
       render json: {
         status: :created,
-        user: @user
+        user: @user,
+        :jwt => token
       }
     else 
       render json: {
