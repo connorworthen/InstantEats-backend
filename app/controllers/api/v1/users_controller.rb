@@ -16,35 +16,25 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    if @user
-      render json: {
-        user: @user
-      }
-    else
-      render json: {
-        status: 500,
-        errors: ['user not found']
-      }
-    end
+    # @user = User.find(params[:id])
+    # if @user
+    #   render json: {
+    #     user: @user
+    #   }
+    # else
+    #   render json: {
+    #     status: 500,
+    #     errors: ['user not found']
+    #   }
+    # end
   end
   
   def create
     @user = User.new(user_params)
     if @user.save
-      # login!
-      payload = {user_id: user.id}
-      token = encode_token(payload)
-      render json: {
-        status: :created,
-        user: @user,
-        :jwt => token
-      }
+      render json: @user
     else 
-      render json: {
-        status: 500,
-        errors: @user.errors.full_messages
-      }
+      render json: {error: 'Error creating account. Please try again.'}
     end
   end
 
