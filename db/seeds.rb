@@ -1,1 +1,1 @@
-restaurant = Restaurant.create(name: 'In N Out', category: 'Fast Food', price: '$', hours: '10:30 AM - 1:00 AM', distance: 2.3)
+user = User.create(first_name: 'connor', last_name: 'worthen', email: 'connorworthen@test.com', password: 'test1', address: 'test address', phone_number: '1234567890')
