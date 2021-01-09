@@ -31,17 +31,20 @@ class Api::V1::UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    binding.pry
     if @user.save
       render json: @user
+      # binding.pry
     else 
       render json: {error: 'Error creating account. Please try again.'}
+      # binding.pry
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :address, :phone_number)
+    params.require(:user).permit(:email, :password, :address, :phone_number)
   end
 
 end
