@@ -1,1 +1,1 @@
-user = User.create(first_name: 'connor', last_name: 'worthen', email: 'connorworthen@test.com', password: 'test1', address: 'test address', phone_number: '1234567890')
+restaurant = Restaurant.create(name: 'test3', category: 'food', price: '$$', hours: '32 min', distance: 5.1)
