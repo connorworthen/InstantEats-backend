@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :sessions, only: [:create, :show, :index]
-      get :logged_in, to: 'sessions#is_logged_in?'
-      resources :users, only: [:create, :show, :index]
-      resources :restaurants
+      get :auto_login, to: 'users#auto_login'
+      post :login, to: 'users#login'
+      post :signup, to: 'users#create'
+      resources :users, only: [:index, :show, :update]
+      resources :restaurants, only: [:index, :show]
     end
   end
   

@@ -2,17 +2,6 @@ class Api::V1::UsersController < ApplicationController
   
   def index
     render json: User.all
-    # @users = User.all
-    # if @users
-    #   render json: {
-    #     users: @users
-    #   }
-    # else
-    #   render json: {
-    #     status: 500,
-    #     errors: ['no users found']
-    #   }
-    # end
   end
 
   def show
@@ -22,11 +11,22 @@ class Api::V1::UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    # binding.pry
     if @user.save
       render json: @user
     else 
       render json: {error: 'Error creating account. Please try again.'}
+    end
+  end
+
+  def login
+    @user = User.find_by(email: session_params[:email])
+    if @user && @user.authenticate(session_params[:password])
+      render json: @user
+    else
+      render json: { 
+        status: 401,
+        errors: ['no such user', 'verify credentials and try again or signup']
+      }
     end
   end
 
