@@ -31,7 +31,6 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-
   def auto_login
     render json: @user
   end
@@ -39,10 +38,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:email, :password, :address, :phone_number)
-    # params permit(:user) causing user not to save to db when signup
-    # once fixed auto_login works. Need auto login to work for redirect
-    # to see restaurant selection post address given in form
+    params.require(:user).permit(:email, :password, :address, :phone_number)
   end
 
 end

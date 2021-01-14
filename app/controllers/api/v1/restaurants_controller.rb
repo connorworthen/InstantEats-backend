@@ -1,4 +1,5 @@
 class Api::V1::RestaurantsController < ApplicationController
+  skip_before_action :authorized, expect: [:index, :show]
 
   def index
     render json: Restaurant.all
