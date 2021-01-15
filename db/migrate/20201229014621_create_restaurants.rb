@@ -3,9 +3,12 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
     create_table :restaurants do |t|
       t.string :name
       t.string :category
+      t.text :address
+      t.integer :phone_number
+      t.text :hours
       t.string :price
-      t.string :hours
       t.float :distance
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
