@@ -13,7 +13,7 @@ class Api::V1::RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :category, :price, :hours, :distance)
+    params.require(:restaurant).permit(:name, :category, :address, :phone_number, :hours, :price, :eta, :distance)
   end
 
 end

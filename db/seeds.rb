@@ -1,1 +1,3 @@
-restaurant = Restaurant.create(name: 'test3', category: 'food', price: '$$', hours: '32 min', distance: 5.1)
+restaurant = Restaurant.create!(name: 'test1', category: 'food', address: '123 Test Way', phone_number: '760 123 4567', hours: '10:00am-11:00pm', price: '$', eta: '32 min', distance: 1.1)
+restaurant = Restaurant.create!(name: 'test2', category: 'food', address: '123 Test Way', phone_number: '760 123 4567', hours: '10:00am-11:00pm', price: '$$', eta: '52 min', distance: 6.1)
+restaurant = Restaurant.create!(name: 'test2', category: 'food', address: '123 Test Way', phone_number: '760 123 4567', hours: '10:00am-11:00pm', price: '$$$', eta: '45 min', distance: 3.1)

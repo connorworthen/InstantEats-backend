@@ -38,11 +38,10 @@ ActiveRecord::Schema.define(version: 2021_01_15_204932) do
     t.integer "phone_number"
     t.text "hours"
     t.string "price"
+    t.text "eta"
     t.float "distance"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,5 +56,4 @@ ActiveRecord::Schema.define(version: 2021_01_15_204932) do
 
   add_foreign_key "items", "menus"
   add_foreign_key "menus", "restaurants"
-  add_foreign_key "restaurants", "users"
 end

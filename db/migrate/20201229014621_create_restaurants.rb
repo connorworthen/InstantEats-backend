@@ -7,8 +7,8 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.integer :phone_number
       t.text :hours
       t.string :price
+      t.text :eta
       t.float :distance
-      t.references :user, foreign_key: true
 
       t.timestamps
     end
