@@ -5,8 +5,6 @@ class CreateMenus < ActiveRecord::Migration[6.0]
       t.text :description
       t.decimal :price
       t.references :restaurant, foreign_key: true
-
-      t.timestamps
     end
   end
 end

@@ -1,5 +1,5 @@
-restaurant = Restaurant.create!(
-  name: 'In N Out', 
+restaurant1 = Restaurant.create(
+  name: 'help me', 
   category: 'Fast Food', 
   address: '123 Burgers Way', 
   phone_number: '(760)-332-4343', 
@@ -40,3 +40,5 @@ restaurant = Restaurant.create!(
     }
   ]
 )
+
+restaurant1.image.attach(io: File.open('./public/images/test1.jpg'), filename: 'test1.jpg', content_type: 'application/jpg')
