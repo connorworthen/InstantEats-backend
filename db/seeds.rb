@@ -40,6 +40,6 @@ test1 = Restaurant.create(
     }
   ]
 )
-test1.image.attach(io: File.open('./public/images/test1.jpg'), filename: 'test1.jpg', content_type: 'application/jpg')
+test1.image.attach(io: File.open('./public/images/test3.webp'), filename: 'test3.webp', content_type: 'application/webp')
 test1.save!
 test1.image.attached?
