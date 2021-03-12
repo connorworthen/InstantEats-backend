@@ -7,7 +7,7 @@ test1 = Restaurant.create(
   price: '$', 
   eta: '47 min', 
   distance: 4.2,
-  menus_attributes: [
+  items_attributes: [
     {
       name: 'Double-Double Cheeseburger Combo', 
       description: 'Our famous Double-Double with patty, cheese, and spread. Come with fries and a drink.', 
