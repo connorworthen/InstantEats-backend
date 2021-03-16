@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :items, through: :restaurants
   has_many :items, through: :items
 
-  validates :first, presence: true
-  validates :last, presence: true
-  validates :email, presence: true, uniqueness: true
+  # validates :first, presence: true
+  # validates :last, presence: true
+  # validates :email, presence: true, uniqueness: true
 end
