@@ -31,6 +31,16 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def authenticate
+    # @user = User.create(email: params[:email])
+    # if @user.valid?
+    #   token = encode_token({user_id: @user.id})
+    #   render json: {user: @user, token: token}
+    # else
+    #   render json: {error: "Invalid username or password"}
+    # end
+  end
+
   def auto_login
     render json: @user
   end
