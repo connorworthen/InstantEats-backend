@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :authorized, only: [:auto_login]
+  before_action :authorized, only: [:auto_login, :omniauth]
 
   def index
     render json: User.all
@@ -29,16 +29,6 @@ class Api::V1::UsersController < ApplicationController
     else
       render json: {error: "Invalid username or password"}
     end
-  end
-
-  def authenticate
-    # @user = User.create(email: params[:email])
-    # if @user.valid?
-    #   token = encode_token({user_id: @user.id})
-    #   render json: {user: @user, token: token}
-    # else
-    #   render json: {error: "Invalid username or password"}
-    # end
   end
 
   def auto_login
