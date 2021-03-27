@@ -20,20 +20,21 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  def login
-    @user = User.find_by(email: params[:email])
+  # def login
+  #   @user = User.find_by(email: params[:email])
+  #   binding.pry
+  #   if @user && @user.authenticate(params[:password])
+  #     binding.pry
+  #     token = encode_token({user_id: @user.id})
+  #     render json: {user: @user, token: token}
+  #   else
+  #     render json: {error: "Invalid username or password"}
+  #   end
+  # end
 
-    if @user && @user.authenticate(params[:password])
-      token = encode_token({user_id: @user.id})
-      render json: {user: @user, token: token}
-    else
-      render json: {error: "Invalid username or password"}
-    end
-  end
-
-  def auto_login
-    render json: @user
-  end
+  # def auto_login
+  #   render json: @user
+  # end
 
   private
 
